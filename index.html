@@ -153,23 +153,37 @@
         </div>
     </footer>
 
-    <!-- ======= JS do carrossel simples ======= -->
+    <!-- ======= JS DO CARROSSEL ======= -->
     <script>
-        document.querySelectorAll('.carousel').forEach(carousel => {
-            const track = carousel.querySelector('.carousel-track');
+    document.addEventListener("DOMContentLoaded", () => {
+        const carousels = document.querySelectorAll(".carousel");
+
+        carousels.forEach(carousel => {
+            const track = carousel.querySelector(".carousel-track");
             const slides = Array.from(track.children);
-            let index = 0;
+            const prevButton = carousel.querySelector(".prev");
+            const nextButton = carousel.querySelector(".next");
 
-            carousel.querySelector('.next').addEventListener('click', () => {
-                index = (index + 1) % slides.length;
-                track.style.transform = `translateX(-${index * 100}%)`;
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+            }
+
+            nextButton.addEventListener("click", () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel();
             });
 
-            carousel.querySelector('.prev').addEventListener('click', () => {
-                index = (index - 1 + slides.length) % slides.length;
-                track.style.transform = `translateX(-${index * 100}%)`;
+            prevButton.addEventListener("click", () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel();
             });
+
+            window.addEventListener("resize", updateCarousel);
         });
+    });
     </script>
 
 </body>

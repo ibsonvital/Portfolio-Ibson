@@ -2,11 +2,12 @@
    VARIÁVEIS DE CORES
    ======================================================= */
 :root {
-    --color-primary: #00aaff; /* Azul Brilhante / Elétrico (Destaque/Glow) */
-    --color-secondary: #0a192f; /* Azul Marinho Escuro (Para contraste em seções light) */
-    --color-dark: #000000; /* Preto Puro (Fundo principal) */
-    --color-off-black: #050d17; /* Quase Preto (Para fundos de caixas e footer) */
-    --color-text: #ffffff; /* Texto Claro */
+    --color-primary: #00aaff; /* Azul Elétrico */
+    --color-primary-soft: #33bbff; /* Azul suave para hover e destaques */
+    --color-secondary: #0a192f; /* Azul Marinho Escuro */
+    --color-dark: #000000; /* Preto puro */
+    --color-off-black: #050d17; /* Quase preto */
+    --color-text: #ffffff; /* Texto claro */
 }
 
 /* =======================================================
@@ -18,20 +19,27 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--color-dark);
     color: var(--color-text);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    font-smooth: always;
 }
 
 a {
     text-decoration: none;
     color: var(--color-primary);
+    transition: color 0.3s ease;
 }
 
 .section-padding {
-    padding: 4rem 0;
+    padding: clamp(2rem, 5vw, 4rem) 0;
 }
 
 .container {
@@ -63,13 +71,15 @@ a {
    HEADER / NAV
    ======================================================= */
 header {
-    background-color: var(--color-dark);
+    background: linear-gradient(90deg, #000 0%, #031424 100%);
     padding: 1rem 0;
-    border-bottom: 1px solid var(--color-off-black);
+    border-bottom: 1px solid rgba(0, 170, 255, 0.15);
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 0 10px rgba(0, 170, 255, 0.15);
+    backdrop-filter: blur(6px);
+    transition: background 0.4s ease, box-shadow 0.4s ease;
 }
 
 .header-content {
@@ -86,8 +96,8 @@ header {
 }
 
 .foto-logo {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     border: 2px solid var(--color-primary);
     object-fit: cover;
@@ -97,6 +107,7 @@ header {
 
 .foto-logo:hover {
     box-shadow: 0 0 15px rgba(0, 170, 255, 0.7);
+    transform: scale(1.05);
 }
 
 .logo {
@@ -115,12 +126,12 @@ header {
 
 #main-nav a {
     color: var(--color-text);
-    transition: color 0.3s;
     font-weight: 500;
+    position: relative;
 }
 
 #main-nav a:hover {
-    color: var(--color-primary);
+    color: var(--color-primary-soft);
 }
 
 .btn-cta {
@@ -177,7 +188,7 @@ header {
 }
 
 #hero h1 {
-    color: var(--color-primary);
+    color: var(--color-primary-soft);
     text-shadow: 0 0 15px rgba(0, 170, 255, 0.7);
     font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 0.5rem;
@@ -231,6 +242,12 @@ header {
     object-fit: cover;
     margin-bottom: 2rem;
     box-shadow: 0 0 0 5px var(--color-primary), 0 0 25px var(--color-primary);
+    transition: all 0.4s ease;
+}
+
+.foto-perfil img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px var(--color-primary), 0 0 60px rgba(0, 170, 255, 0.6);
 }
 
 .sobre-texto {
@@ -241,6 +258,21 @@ header {
     color: var(--color-primary);
     margin-bottom: 1rem;
     font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#sobre h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background: var(--color-primary);
+    bottom: 0;
+    left: 20%;
+    box-shadow: 0 0 10px var(--color-primary);
+    border-radius: 2px;
 }
 
 #sobre p strong {
@@ -258,6 +290,21 @@ header {
     text-align: center;
     color: var(--color-primary);
     margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#projetos h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background: var(--color-primary);
+    bottom: 0;
+    left: 20%;
+    box-shadow: 0 0 10px var(--color-primary);
+    border-radius: 2px;
 }
 
 .project-item {
@@ -303,18 +350,22 @@ header {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 170, 255, 0.5);
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
+    background-color: rgba(0, 170, 255, 0.2);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-primary);
+    font-size: 1.8rem;
     padding: 0.4rem 0.8rem;
     cursor: pointer;
     border-radius: 50%;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .carousel button:hover {
     background-color: var(--color-primary);
+    color: var(--color-dark);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
 }
 
 .carousel .prev { left: 10px; }
@@ -331,6 +382,21 @@ header {
 #habilidades h2 {
     color: var(--color-primary);
     margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#habilidades h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background: var(--color-primary);
+    bottom: 0;
+    left: 20%;
+    box-shadow: 0 0 10px var(--color-primary);
+    border-radius: 2px;
 }
 
 .skills-list li {
@@ -441,6 +507,15 @@ footer {
         gap: 15px;
     }
 
+    .logo-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
     #main-nav ul {
         flex-wrap: wrap;
         justify-content: center;
@@ -449,18 +524,11 @@ footer {
 
     .social-links {
         margin-top: 10px;
+        order: 3;
     }
 
     .sobre-container {
         flex-direction: column;
-    }
-
-    .section-padding {
-        padding: 3rem 0;
-    }
-
-    #hero {
-        padding: 6rem 0;
     }
 }
 
