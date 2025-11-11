@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibson Vital | Portfólio Data & BI</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <link rel="stylesheet" href="style.css">
+    <title>Ibson Vital | Data Analyst</title>
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- ======= CABEÇALHO ======= -->
     <header>
         <div class="container header-content">
-            <a href="#hero" class="logo">
-                <img src="ibson.jpg" alt="Foto de Perfil/Logo" class="logo-photo">
-                Ibson Vital
-            </a>
-            
+            <div class="logo-container">
+                <img src="ibson.jpg" alt="Foto de Ibson Vital" class="foto-logo"> 
+                <a href="#hero" class="logo">Ibson Vital</a>
+            </div>
+
             <nav id="main-nav">
                 <ul>
                     <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#visao-estrategica">Visão</a></li>
                     <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#habilidades">Habilidades</a></li>
                     <li><a href="#contato" class="btn-cta">Contato</a></li>
@@ -30,106 +29,148 @@
             </nav>
 
             <div class="social-links">
-                <a href="URL_SEU_LINKEDIN" target="_blank" class="social-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="URL_SEU_GITHUB" target="_blank" class="social-btn github"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/ibson-vital/" target="_blank" class="social-btn linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/ibsonvital" target="_blank" class="social-btn github">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
-
-            <button class="menu-toggle" aria-label="Abrir Menu"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <section id="hero" class="section-padding">
-        <div class="container">
-            <h1 class="reveal">Transformando dados em decisões inteligentes.</h1>
-            <p class="slogan reveal">Análise, Estratégia e Automação de Processos.</p>
-            <a href="#projetos" class="btn-primary reveal">Ver Projetos</a>
-        </div>
-    </section>
-    
-    <section id="sobre" class="section-padding">
-        <div class="sobre-container">
-            <div class="foto-perfil reveal">
-                <img src="ibson.jpg" alt="Foto de perfil de Ibson Vital">
+    <!-- ======= HERO ======= -->
+    <main>
+        <section id="hero" class="hero-bg section-padding">
+            <div class="container">
+                <h1>Transformando dados em decisões inteligentes.</h1>
+                <p class="slogan">Análise, Estratégia e Automação de Processos.</p>
+                <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
             </div>
-            <div class="sobre-texto reveal">
-                <h2>Quem sou eu?</h2> 
-                <p>Olá! Sou Ibson Vital, um profissional apaixonado por dados. Meu foco é transformar grandes volumes de informação em estratégias acionáveis para impulsionar a performance e a competitividade moderna. Sou especialista em **Data Quality, Modelagem Preditiva e Visualização de Dados**. Minha experiência engloba desde a **governança de dados** até a criação de dashboards interativos e automação de processos, utilizando ferramentas como **Power BI, SQL e Python**.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projetos" class="section-padding">
-        <div class="container">
-            <h2>Projetos de Data Analytics</h2>
-            <div class="projetos-grid">
+        <!-- ======= SOBRE ======= -->
+        <section id="sobre" class="section-padding bg-light">
+            <div class="container sobre-container">
+                <div class="foto-perfil">
+                    <img src="ibson.jpg" alt="Foto de Ibson Vital"> 
+                </div>
+                <div class="sobre-texto">
+                    <h2>Quem sou eu?</h2>
+                    <p>
+                        Sou <strong>Ibson Vital</strong>, Analista de Dados com experiência em Power BI, Excel, Power Query e Melhoria de Processos. 
+                        Graduando em Ciência da Computação, com foco em criar soluções analíticas 
+                        que otimizem processos e gerem valor estratégico. 
+                        Trabalho atualmente com dados da empresa <strong>Reserva</strong> e possuo certificações 
+                        em Lean Six Sigma (White e Yellow Belt).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= PROJETOS ======= -->
+        <section id="projetos" class="section-padding">
+            <div class="container">
+                <h2>Projetos em Destaque</h2>
                 
-                <div class="projeto-card reveal">
-                    <img src="dashboard-logistica.png" alt="Dashboard de Otimização de Frota" class="projeto-img">
-                    <h3>Dashboard Logístico: Otimização de Frota e Rota</h3>
-                    <p>Análise completa de KPIs operacionais para a otimização de frota, controle operacional por BI e simulação de rotas de entrega, resultando em uma redução de 10% nos gastos com combustível.</p>
-                    <a href="#" class="btn-secundary">Ver Case Study <i class="fas fa-arrow-right"></i></a>
+                <div class="project-item">
+                    <h3>Dashboard de Metas e Vendas</h3>
+                    <p>Dashboard em Power BI para acompanhamento de metas, desempenho de vendas e rentabilidade.</p>
+                    <div class="carousel">
+                        <button class="prev">&#10094;</button>
+                        <div class="carousel-track">
+                            <img src="vendas.png" alt="Dashboard Vendas 1" class="project-img">
+                            <img src="dashboard-vendas2.png" alt="Dashboard Vendas 2" class="project-img">
+                        </div>
+                        <button class="next">&#10095;</button>
+                    </div>
                 </div>
 
-                <div class="projeto-card reveal">
-                    <img src="dashboard-ecommerce.png" alt="Dashboard de Análise de Conversão e Churn" class="projeto-img">
-                    <h3>Dashboard E-commerce: Análise de Conversão e Churn</h3>
-                    <p>Dashboard focado em métricas de análise online, como otimização de taxas de conversão, custo de aquisição (CAC) e acompanhamento de evasão (Churn Rate) de clientes.</p>
-                    <a href="#" class="btn-secundary">Ver Case Study <i class="fas fa-arrow-right"></i></a>
+                <div class="project-item">
+                    <h3>Dashboard de Logística</h3>
+                    <p>Visualização interativa para controle de entregas, atrasos e eficiência operacional.</p>
+                    <div class="carousel">
+                        <button class="prev">&#10094;</button>
+                        <div class="carousel-track">
+                            <img src="dashboard-logistica1.png" alt="Dashboard Logística 1" class="project-img">
+                            <img src="dashboard-logistica2.png" alt="Dashboard Logística 2" class="project-img">
+                        </div>
+                        <button class="next">&#10095;</button>
+                    </div>
                 </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="visao-estrategica" class="section-padding">
-        <div class="container">
-            <h2>Minha Visão Estratégica</h2>
-            <div class="visao-grid">
-                <div class="visao-item reveal"><h3>Importância da Análise de Dados</h3><p>Acredito que a análise de dados é o motor que impulsiona a competitividade moderna.</p></div>
-                <div class="visao-item reveal"><h3>Compromisso com o Data Quality e Governance</h3><p>O meu compromisso é com a governança de dados.</p></div>
+        <!-- ======= HABILIDADES ======= -->
+        <section id="habilidades" class="section-padding bg-dark">
+            <div class="container">
+                <h2>Habilidades Técnicas</h2>
+                <ul class="skills-list grid-4">
+                    <li>Power BI</li>
+                    <li>Tableau</li>
+                    <li>SQL (PostgreSQL)</li>
+                    <li>Excel Avançado</li>
+                    <li>Python (básico)</li>
+                    <li>Lean Six Sigma (Yellow Belt)</li>
+                    <li>Automação de Processos</li>
+                    <li>Governança de Dados</li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="habilidades" class="section-padding">
-        <div class="container">
-            <h2>Habilidades Técnicas</h2>
-            <ul class="skills-list">
-                <li>Power BI & DAX</li>
-                <li>SQL (Consultas e Modelagem)</li>
-                <li>Python (Pandas, Scikit-learn)</li>
-                <li>Modelagem de Dados Estrela/Snowflake</li>
-                <li>Excel Avançado (VBA)</li>
-                <li>Automação de ETL</li>
-                <li>Data Storytelling</li>
-                <li>Cloud Computing (Azure/AWS)</li>
-            </ul>
-        </div>
-    </section>
-    
-    <section id="contato" class="section-padding">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Seu Nome" required>
-                <input type="email" name="email" placeholder="Seu E-mail" required>
-                <textarea name="message" rows="5" placeholder="Sua Mensagem" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
+        <!-- ======= CONTATO ======= -->
+        <section id="contato" class="section-padding bg-light">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <form id="contact-form" action="https://formspree.io/f/mjkjvyke" method="POST">
+                    <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" id="email" name="_replyto" placeholder="Seu E-mail" required>
+                    <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" required></textarea>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <p id="form-message"></p>
+                </form>
+            </div>
+        </section>
+    </main>
 
+    <!-- ======= RODAPÉ ======= -->
     <footer>
         <div class="container footer-content">
-            <div class="footer-social-links">
-                <a href="URL_SEU_LINKEDIN" target="_blank" class="footer-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="URL_SEU_GITHUB" target="_blank" class="footer-link"><i class="fab fab fa-github"></i> GitHub</a>
-                <a href="mailto:SEU_EMAIL" class="footer-link"><i class="fas fa-envelope"></i> Email</a>
-            </div>
             <p>&copy; 2025 Ibson Vital. Todos os direitos reservados.</p>
+            
+            <div class="footer-links">
+                <a href="mailto:ibson.photo@gmail.com" class="footer-link">
+                    <i class="fas fa-envelope"></i> ibson.photo@gmail.com
+                </a>
+                
+                <a href="https://www.linkedin.com/in/ibson-vital/" target="_blank" class="footer-link social-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/ibsonvital" target="_blank" class="footer-link social-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
         </div>
     </footer>
-    
-    <script src="script.js"></script> 
+
+    <!-- ======= JS do carrossel simples ======= -->
+    <script>
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const track = carousel.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            let index = 0;
+
+            carousel.querySelector('.next').addEventListener('click', () => {
+                index = (index + 1) % slides.length;
+                track.style.transform = `translateX(-${index * 100}%)`;
+            });
+
+            carousel.querySelector('.prev').addEventListener('click', () => {
+                index = (index - 1 + slides.length) % slides.length;
+                track.style.transform = `translateX(-${index * 100}%)`;
+            });
+        });
+    </script>
+
 </body>
 </html>
