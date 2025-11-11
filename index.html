@@ -1,675 +1,162 @@
-/* =======================================================
-   VARIÁVEIS DE CORES
-   ======================================================= */
-:root {
-    --color-primary: #00aaff; /* Azul Brilhante / Elétrico (Destaque/Glow) */
-    --color-secondary: #0a192f; /* Azul Marinho Escuro */
-    --color-dark: #000000; /* Preto Puro (Fundo principal) */
-    --color-off-black: #050d17; /* Quase Preto (Caixas/Footer) */
-    --color-text: #ffffff;
-    --header-height: 70px; 
-}
-
-/* =======================================================
-   ESTILOS GLOBAIS E RESET
-   ======================================================= */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--color-dark); 
-    color: var(--color-text);
-    line-height: 1.6;
-    /* Linha de correção anterior removida (padding-top no body) */
-}
-
-a {
-    text-decoration: none;
-    color: var(--color-primary);
-}
-
-h1, h2, h3 {
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.section-padding {
-    padding: 4rem 0;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-
-/* =======================================================
-   HEADER/NAVEGAÇÃO
-   ======================================================= */
-header {
-    background-color: var(--color-dark); 
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--color-off-black);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    height: var(--header-height);
-    display: flex; 
-    align-items: center; 
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.logo {
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
-    color: var(--color-text);
-    font-size: 1.3rem; 
-    font-weight: 700;
-    white-space: nowrap; 
-}
-
-.logo-photo {
-    width: 32px; 
-    height: 32px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    border: 1px solid var(--color-primary); 
-    box-shadow: 0 0 6px rgba(0, 170, 255, 0.5); 
-    display: block; 
-}
-
-#main-nav {
-    margin: 0 auto; 
-}
-
-#main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-#main-nav a {
-    color: var(--color-text);
-    transition: color 0.3s;
-    font-weight: 500; /* Fonte mais suave */
-    padding: 5px 0; 
-    display: block; 
-    white-space: nowrap; 
-}
-
-#main-nav a:hover {
-    color: var(--color-primary);
-}
-
-.btn-cta {
-    background: var(--color-primary);
-    color: var(--color-dark) !important;
-    padding: 7px 14px; 
-    border-radius: 5px;
-    font-weight: 700 !important;
-    transition: all 0.3s;
-}
-
-.social-links {
-    display: flex;
-    gap: 10px;
-    flex-shrink: 0; 
-}
-
-.social-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--color-primary); 
-    color: var(--color-dark); 
-    padding: 0.3rem 0.7rem; 
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 0.8rem; 
-    white-space: nowrap; 
-    transition: all 0.3s;
-}
-
-.social-btn:hover {
-    box-shadow: 0 0 10px rgba(0, 170, 255, 0.8);
-}
-
-.social-btn.github {
-    background: var(--color-dark); 
-    color: var(--color-text); 
-    border: 1px solid var(--color-primary); 
-}
-
-.social-btn.github:hover {
-    background: var(--color-primary);
-    color: var(--color-dark);
-}
-
-/* Botão de Menu para Mobile (escondido em desktop) */
-.menu-toggle {
-    display: none; /* Esconde em telas maiores */
-    background: none;
-    border: none;
-    color: var(--color-primary);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 5px;
-    margin-left: 10px;
-}
-
-/* =======================================================
-   SEÇÃO HERO (PRIMEIRA TELA) - CORRIGIDA AQUI
-   ======================================================= */
-#hero {
-    /* Garante que ocupe a tela inteira */
-    height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    background-color: var(--color-dark); 
-    color: var(--color-text); 
-    padding: 0 15px; 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibson Vital | Portfólio</title>
     
-    /* CORREÇÃO: Usa padding-top para empurrar o conteúdo interno para baixo do header fixo */
-    padding-top: var(--header-height); 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    /* Garante que o padding seja incluso na altura de 100vh */
-    box-sizing: border-box; 
-}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-#hero h1 {
-    font-size: 3.5rem; 
-    color: var(--color-primary); 
-    margin-bottom: 1.5rem; 
-    font-weight: 700;
-    text-shadow: 0 0 15px rgba(0, 170, 255, 0.5); 
-}
+    <header>
+        <div class="container header-content">
+            <a href="#hero" class="logo">
+                <img src="ibson.png" alt="Foto de Perfil/Logo" class="logo-photo">
+                Ibson Vital
+            </a>
+            
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#visao-estrategica">Visão</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#contato" class="btn-cta">Contato</a></li>
+                </ul>
+            </nav>
 
-#hero .slogan {
-    font-size: 1.4rem; 
-    margin-bottom: 2.5rem; 
-    color: #ccc; 
-}
+            <div class="social-links">
+                <a href="URL_SEU_LINKEDIN" target="_blank" class="social-btn linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="URL_SEU_GITHUB" target="_blank" class="social-btn github">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
 
-#hero .btn-primary {
-    display: inline-block; 
-    background: var(--color-primary); 
-    color: var(--color-dark); 
-    padding: 15px 30px; 
-    border-radius: 8px; 
-    font-size: 1.1rem; 
-    font-weight: 700; 
-    transition: all 0.3s ease; 
-    border: none; 
-    cursor: pointer; 
-    box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4); 
-}
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
-#hero .btn-primary:hover {
-    background: var(--color-dark); 
-    color: var(--color-primary); 
-    border: 2px solid var(--color-primary); 
-    transform: translateY(-3px); 
-    box-shadow: 0 8px 20px rgba(0, 170, 255, 0.6); 
-}
+    <section id="hero" class="section-padding">
+        <div class="container">
+            <img src="ibson-hero.png" alt="Ibson Vital em destaque" class="hero-photo reveal"> 
 
-/* =======================================================
-   SEÇÃO SOBRE (COM CORREÇÃO DE FUNDO)
-   ======================================================= */
-#sobre {
-    text-align: center;
-    background-color: var(--color-secondary); 
-    min-height: 50vh; /* Garante altura mínima para ver o fundo */
-    display: flex;
-    align-items: center; 
-    justify-content: center; 
-    padding: 6rem 0; 
-}
+            <h1 class="reveal">Transformando dados em decisões inteligentes.</h1>
+            <p class="slogan reveal">Análise, Estratégia e Automação de Processos.</p>
+            <a href="#projetos" class="btn-primary reveal">Ver Projetos</a>
+        </div>
+    </section>
 
-.sobre-container {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    max-width: 800px; 
-    margin: 0 auto; 
-    padding: 0 15px;
-}
+    <section id="sobre" class="section-padding">
+        <div class="sobre-container">
+            <div class="foto-perfil reveal">
+                <img src="ibson.png" alt="Foto de perfil de Ibson Vital">
+            </div>
+            <div class="sobre-texto reveal">
+                <h2>Olá, eu sou Ibson Vital</h2>
+                <p>Sou um Analista de Dados e BI com paixão por traduzir números complexos em narrativas visuais e estratégias de negócio. Minha jornada é marcada pela busca por eficiência e pela crença de que **todo dado tem uma história para contar**. Ajudo empresas a navegar pela complexidade do mercado com insights baseados em **inteligência de dados**.</p>
+            </div>
+        </div>
+    </section>
 
-/* Estilo do Brilho da Foto (Com ajustes) */
-.foto-perfil {
-    width: 180px; 
-    height: 180px; 
-    border-radius: 50%; 
-    overflow: hidden; 
-    border: 5px solid var(--color-primary); /* Borda mais grossa */
-    box-shadow: 0 0 20px rgba(0, 170, 255, 0.8); /* Brilho mais forte */
-    margin-bottom: 2rem; 
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s ease;
-}
+    <section id="visao-estrategica" class="section-padding">
+        <div class="container">
+            <h2>Minha Visão Estratégica</h2>
+            <div class="container visao-grid">
+                
+                <div class="visao-item reveal">
+                    <h3>Importância da Análise de Dados</h3>
+                    <p>Acredito que a análise de dados é o motor que impulsiona a competitividade moderna. Ela transforma grandes volumes de informação em **insights acionáveis**, permitindo que as empresas:</p>
+                    <ul>
+                        <li><i class="fas fa-chart-line"></i> **Aumentem a Lucratividade:** Através da identificação de gargalos e ofertas mais assertivas.</li>
+                        <li><i class="fas fa-users"></i> **Melhorem a Experiência do Cliente:** Personalizando interações com base em dados de comportamento.</li>
+                        <li><i class="fas fa-rocket"></i> **Prevejam Tendências:** Antecipando mudanças no mercado para posicionamento estratégico.</li>
+                    </ul>
+                </div>
+                
+                <div class="visao-item reveal">
+                    <h3>Compromisso com o Data Quality e Governance</h3>
+                    <p>Qualquer análise é tão boa quanto a qualidade dos seus dados. O meu compromisso é com a governança de dados para garantir a **confiabilidade** das decisões. Meu foco inclui:</p>
+                    <ul>
+                        <li><i class="fas fa-database"></i> **Data Quality (Qualidade):** Limpeza, padronização e validação de dados nas fontes (SQL, Power Query).</li>
+                        <li><i class="fas fa-sitemap"></i> **Modelagem e Transformação:** Estruturação de modelos de dados eficientes para relatórios e análises complexas.</li>
+                        <li><i class="fas fa-shield-alt"></i> **Segurança e Compliance:** Garantir que o manuseio e armazenamento dos dados sigam as normas e regulamentações.</li>
+                    </ul>
+                </div>
 
-.foto-perfil img {
-    width: 100%; 
-    height: 100%;
-    object-fit: cover; 
-    display: block; 
-}
+            </div>
+        </div>
+    </section>
+    
+    <section id="habilidades" class="section-padding">
+        <div class="container">
+            <h2>Habilidades Técnicas</h2>
+            <ul class="skills-list">
+                <li>SQL (Avançado)</li>
+                <li>Python (Pandas, Scikit-learn)</li>
+                <li>Power BI (DAX, M-Query)</li>
+                <li>Tableau</li>
+                <li>Modelagem de Dados</li>
+                <li>ETL / ELT</li>
+                <li>Automação (Scripts e Fluxos)</li>
+                <li>Google Analytics / GA4</li>
+                <li>Excel Avançado</li>
+                <li>Data Storytelling</li>
+            </ul>
+        </div>
+    </section>
 
-.foto-perfil:hover {
-    box-shadow: 0 0 30px rgba(0, 255, 255, 1); /* Brilho neon intenso */
-    border-color: #00ffff;
-    transform: scale(1.02);
-}
+    <section id="projetos" class="section-padding">
+        <div class="container">
+            <h2>Meus Projetos Recentes</h2>
+            
+            <div class="project-item reveal">
+                <h3>Dashboard de Vendas Interativo (Power BI)</h3>
+                <p>Criação de um dashboard completo para monitoramento de KPIs de vendas, utilizando DAX avançado e técnicas de visualização de dados para identificar tendências sazonais e principais drivers de receita.</p>
+                <div class="dashboard-carousel-container">
+                    <img src="URL_IMAGEM_PROJETO_1" alt="Exemplo de Dashboard Power BI" class="dashboard-img">
+                </div>
+            </div>
 
-.sobre-texto h2 {
-    color: var(--color-primary);
-    margin-bottom: 1.5rem;
-    font-size: 2.2rem;
-}
+            <div class="project-item reveal">
+                <h3>Script de Limpeza e Automação (Python)</h3>
+                <p>Desenvolvimento de um script Python utilizando a biblioteca Pandas para automatizar a limpeza, transformação e padronização de grandes bases de dados, reduzindo o tempo de preparação em 80%.</p>
+            </div>
+        </div>
+    </section>
 
-/* =======================================================
-   ESTILO DE BRILHO (GLOW) NO TEXTO
-   ======================================================= */
+    <section id="contato" class="section-padding">
+        <div class="container">
+            <h2>Vamos Criar Valor Juntos?</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Seu Nome" required>
+                <input type="email" name="email" placeholder="Seu Melhor Email" required>
+                <textarea name="message" rows="5" placeholder="Sua Mensagem / Proposta" required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+            <div id="form-message"></div>
+        </div>
+    </section>
 
-/* Aplica o brilho azul (text-shadow) nas palavras em negrito */
-#sobre strong {
-    color: var(--color-primary);
-    text-shadow: 0 0 5px rgba(0, 170, 255, 0.7), 
-                 0 0 10px rgba(0, 170, 255, 0.5); 
-}
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 Ibson Vital. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="URL_SEU_LINKEDIN" target="_blank" class="footer-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="URL_SEU_GITHUB" target="_blank" class="footer-link"><i class="fab fa-github"></i> GitHub</a>
+                <a href="mailto:SEU_EMAIL@exemplo.com" class="footer-link"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </div>
+    </footer>
 
-/* Aplica um pequeno brilho também nas palavras em negrito da Visão Estratégica */
-.visao-item strong {
-    color: var(--color-primary);
-    text-shadow: 0 0 3px rgba(0, 170, 255, 0.5); 
-}
-
-/* =======================================================
-   SEÇÃO VISÃO ESTRATÉGICA 
-   ======================================================= */
-#visao-estrategica h2 {
-    color: var(--color-primary);
-    margin-bottom: 3rem;
-    font-size: 2.2rem;
-    text-align: center;
-}
-
-.container.visao-grid {
-    display: grid;
-    grid-template-columns: 1fr; 
-    gap: 30px;
-    text-align: left;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-@media (min-width: 900px) {
-    .container.visao-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.visao-item {
-    background-color: var(--color-off-black); 
-    padding: 2.5rem; 
-    border-radius: 8px;
-    border: 1px solid rgba(0, 170, 255, 0.2); 
-    height: 100%;
-}
-.visao-item h3 {
-    color: var(--color-primary);
-    text-align: center;
-}
-
-.visao-item ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 1rem;
-}
-
-.visao-item ul li {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: flex-start;
-}
-
-.visao-item ul li i {
-    color: var(--color-primary);
-    margin-right: 10px;
-    padding-top: 5px;
-    font-size: 0.9rem;
-}
-
-/* =======================================================
-   SEÇÃO PROJETOS 
-   ======================================================= */
-#projetos {
-    background-color: var(--color-dark);
-}
-
-#projetos h2 {
-    color: var(--color-primary);
-    margin-bottom: 3rem;
-    font-size: 2.2rem;
-    text-align: center;
-}
-
-.project-item {
-    background-color: var(--color-off-black);
-    padding: 2.5rem; 
-    margin-bottom: 2.5rem; 
-    border-radius: 8px;
-    border: 1px solid rgba(0,170,255,0.2);
-}
-
-.project-item h3 {
-    color: var(--color-primary);
-    margin-bottom: 0.8rem;
-    font-size: 1.8rem;
-}
-
-.dashboard-carousel-container {
-    position: relative;
-    margin-top: 1.5rem;
-    overflow: hidden;
-    border-radius: 6px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--color-primary); 
-}
-
-/* Estilos do Wrapper para animação do JS (Carrossel) */
-.dashboard-images-wrapper {
-    display: flex; /* Permite que as imagens fiquem lado a lado */
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s ease-in-out; /* Transição suave */
-}
-
-.dashboard-img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; 
-    display: block;
-    flex-shrink: 0; /* Impede que a imagem encolha */
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-    background: rgba(0, 170, 255, 0.8); 
-    color: var(--color-dark); 
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    opacity: 0.8;
-    transition: opacity 0.3s, background 0.3s;
-}
-
-.carousel-btn:hover {
-    opacity: 1;
-    background: var(--color-primary);
-}
-
-.left-btn { left: 10px; }
-.right-btn { right: 10px; }
-
-
-/* =======================================================
-   SEÇÃO HABILIDADES (BOTÕES AZUIS)
-   ======================================================= */
-#habilidades {
-    text-align: center; 
-    background-color: var(--color-secondary); 
-}
-
-#habilidades h2 {
-    color: var(--color-primary);
-    margin-bottom: 2.5rem;
-    font-size: 2.2rem;
-}
-
-.skills-list {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 12px; 
-    list-style: none; 
-    padding: 0;
-    max-width: 900px; 
-    margin: 0 auto; 
-}
-
-.skills-list li {
-    background-color: var(--color-primary); 
-    color: var(--color-dark); 
-    padding: 0.7rem 1.2rem; 
-    border-radius: 5px; 
-    font-weight: 600; 
-    font-size: 0.95rem; 
-    white-space: nowrap; 
-    border: 1px solid var(--color-primary); 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); 
-    transition: all 0.3s ease; 
-}
-
-.skills-list li:hover {
-    background-color: var(--color-dark); 
-    color: var(--color-primary); 
-    border-color: var(--color-primary); 
-    transform: translateY(-3px); 
-    box-shadow: 0 4px 12px rgba(0, 170, 255, 0.4); 
-}
-
-
-/* =======================================================
-   SEÇÃO CONTATO 
-   ======================================================= */
-#contato {
-    text-align: center;
-}
-
-#contato h2 {
-    color: var(--color-primary);
-    margin-bottom: 2.5rem;
-    font-size: 2.2rem;
-}
-
-#contact-form {
-    max-width: 450px; 
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column; 
-    gap: 20px; 
-    background-color: var(--color-off-black);
-    padding: 2.5rem; 
-    border-radius: 8px;
-    border: 1px solid rgba(0,170,255,0.2);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-}
-
-#contact-form input,
-#contact-form textarea {
-    padding: 14px; 
-    border: 1px solid var(--color-primary);
-    border-radius: 5px;
-    background-color: var(--color-dark);
-    color: var(--color-text);
-    font-size: 1.05rem;
-    resize: vertical;
-    outline: none; 
-}
-
-#contact-form input:focus,
-#contact-form textarea:focus {
-    border-color: #00ffff;
-    box-shadow: 0 0 8px rgba(0, 170, 255, 0.6);
-}
-
-
-#contact-form button {
-    padding: 14px;
-    background: var(--color-primary);
-    color: var(--color-dark);
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-    border-radius: 5px;
-}
-
-#contact-form button:hover {
-    background: #00ffff;
-}
-
-/* Estilo para a Mensagem de Feedback do Formulário */
-#form-message {
-    margin-top: -10px; /* Sobe um pouco a mensagem */
-    text-align: center;
-    font-weight: 600;
-    min-height: 20px; /* Para evitar pulos de layout */
-}
-
-
-/* =======================================================
-   FOOTER (RODAPÉ)
-   ======================================================= */
-footer {
-    text-align: center;
-    padding: 1.8rem 0;
-    background-color: var(--color-off-black); 
-    border-top: 1px solid rgba(0,170,255,0.2);
-    font-size: 0.95rem;
-    color: #aaa; 
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-    gap: 15px; 
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center; 
-    gap: 25px; 
-    margin-top: 5px; 
-}
-
-.footer-link {
-    display: flex;
-    align-items: center;
-    color: var(--color-text); 
-    text-decoration: none;
-    white-space: nowrap; 
-    font-size: 0.95rem; 
-    transition: color 0.3s; 
-}
-
-.footer-link:hover {
-    color: var(--color-primary); 
-}
-
-.footer-link i {
-    margin-right: 8px; 
-    color: var(--color-primary); 
-    font-size: 1.1rem; 
-}
-
-
-/* =======================================================
-   REVEAL ON SCROLL (Suporte ao JS)
-   ======================================================= */
-.reveal {
-    /* Estado inicial para animação */
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* A classe hidden é usada pelo JS para marcar o estado inicial */
-.reveal.hidden {
-    opacity: 0;
-    transform: translateY(12px);
-}
-/* A classe .reveal (sem hidden) tem os estilos finais (opacity: 1, transform: translateY(0)) */
-
-
-/* =======================================================
-   MEDIA QUERIES (Responsividade)
-   ======================================================= */
-
-@media (max-width: 900px) {
-    /* Navegação */
-    #main-nav ul {
-        display: none; /* Esconde o menu por padrão no mobile */
-        flex-direction: column;
-        background-color: var(--color-dark);
-        position: absolute;
-        top: var(--header-height);
-        left: 0;
-        width: 100%;
-        padding: 1rem 0;
-        border-top: 1px solid var(--color-off-black);
-    }
-    #main-nav a {
-        padding: 10px 15px;
-        text-align: center;
-    }
-    .menu-toggle {
-        display: block; /* Mostra o botão de menu */
-    }
-    .social-links {
-        display: none; /* Esconde links sociais no cabeçalho em telas menores */
-    }
-
-    /* Ajustes Gerais */
-    .header-content {
-        height: var(--header-height);
-        justify-content: space-between;
-        padding: 0 15px;
-    }
-    #hero h1 {
-        font-size: 2.5rem;
-    }
-    #hero .slogan {
-        font-size: 1.1rem;
-    }
-    #hero .btn-primary {
-        padding: 12px 25px;
-        font-size: 1rem;
-    }
-    
-    .container.visao-grid {
-        grid-template-columns: 1fr;
-    }
-}
+    <script src="script.js"></script> 
+</body>
+</html>
