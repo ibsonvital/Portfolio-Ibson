@@ -1,6 +1,6 @@
 /* =======================================================
-   VARIÁVEIS DE CORES
-   ======================================================= */
+    VARIÁVEIS DE CORES
+    ======================================================= */
 :root {
     --color-primary: #00aaff; /* Azul Elétrico */
     --color-primary-soft: #33bbff; /* Azul suave para hover e destaques */
@@ -11,8 +11,8 @@
 }
 
 /* =======================================================
-   RESET E BASE
-   ======================================================= */
+    RESET E BASE
+    ======================================================= */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -49,8 +49,8 @@ a {
 }
 
 /* =======================================================
-   FUNDOS E GRID
-   ======================================================= */
+    FUNDOS E GRID
+    ======================================================= */
 .bg-dark {
     background-color: var(--color-off-black);
 }
@@ -60,6 +60,7 @@ a {
     color: var(--color-text);
 }
 
+/* Grid para Habilidades */
 .grid-4 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -68,8 +69,8 @@ a {
 }
 
 /* =======================================================
-   HEADER / NAV
-   ======================================================= */
+    HEADER / NAV
+    ======================================================= */
 header {
     background: linear-gradient(90deg, #000 0%, #031424 100%);
     padding: 1rem 0;
@@ -175,8 +176,8 @@ header {
 }
 
 /* =======================================================
-   HERO
-   ======================================================= */
+    HERO
+    ======================================================= */
 #hero {
     background: linear-gradient(180deg, var(--color-dark) 0%, var(--color-secondary) 100%);
     text-align: center;
@@ -221,8 +222,8 @@ header {
 }
 
 /* =======================================================
-   SOBRE
-   ======================================================= */
+    SOBRE
+    ======================================================= */
 #sobre {
     text-align: center;
     background: var(--color-secondary);
@@ -280,8 +281,90 @@ header {
 }
 
 /* =======================================================
-   PROJETOS
-   ======================================================= */
+    ESTRATÉGIA (NOVO BLOCO)
+    ======================================================= */
+
+.text-center {
+    text-align: center;
+}
+
+#estrategia h2 {
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+#estrategia h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    background: var(--color-primary);
+    bottom: 0;
+    left: 20%;
+    box-shadow: 0 0 10px var(--color-primary);
+    border-radius: 2px;
+}
+
+/* Container para os 3 passos - usa Grid */
+.strategy-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Estilo do Card Individual de cada Passo */
+.step-card {
+    background-color: var(--color-off-black); /* Mantém no bg-dark para dar profundidade */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(0, 170, 255, 0.15);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 170, 255, 0.2);
+    border-color: var(--color-primary); 
+}
+
+/* Estilo do Círculo do Ícone */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-primary); 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 24px;
+    color: var(--color-dark); /* Ícones escuros sobre o fundo primary */
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.6);
+}
+
+/* Estilo do Título do Passo */
+.step-card h3 {
+    color: var(--color-text); 
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+/* Estilo da Descrição do Passo */
+.step-card p {
+    color: #ccc;
+    font-size: 1em;
+}
+
+
+/* =======================================================
+    PROJETOS
+    ======================================================= */
 #projetos {
     background: var(--color-off-black);
 }
@@ -372,8 +455,8 @@ header {
 .carousel .next { right: 10px; }
 
 /* =======================================================
-   HABILIDADES
-   ======================================================= */
+    HABILIDADES
+    ======================================================= */
 #habilidades {
     text-align: center;
     background: linear-gradient(180deg, var(--color-secondary), var(--color-off-black));
@@ -414,8 +497,8 @@ header {
 }
 
 /* =======================================================
-   CONTATO
-   ======================================================= */
+    CONTATO
+    ======================================================= */
 #contato {
     text-align: center;
     background: var(--color-secondary);
@@ -455,8 +538,8 @@ header {
 }
 
 /* =======================================================
-   FOOTER
-   ======================================================= */
+    FOOTER
+    ======================================================= */
 footer {
     text-align: center;
     padding: 1.5rem 0;
@@ -498,8 +581,15 @@ footer {
 }
 
 /* =======================================================
-   RESPONSIVIDADE
-   ======================================================= */
+    RESPONSIVIDADE
+    ======================================================= */
+@media (max-width: 992px) {
+    /* Estratégia: Quebra para uma única coluna */
+    .strategy-steps {
+        grid-template-columns: 1fr; 
+    }
+}
+
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
