@@ -2,8 +2,8 @@
     VARIÁVEIS DE CORES
     ======================================================= */
 :root {
-    --color-primary: #00aaff; /* Azul Elétrico */
-    --color-primary-soft: #33bbff; /* Azul suave para hover e destaques */
+    --color-primary: #4ab8f2; /* AZUL SUAVE NOVO (Celeste) - Menos agressivo que o elétrico */
+    --color-primary-soft: #84d0fa; /* Azul ainda mais claro para hover e destaques */
     --color-secondary: #0a192f; /* Azul Marinho Escuro */
     --color-dark: #000000; /* Preto puro */
     --color-off-black: #050d17; /* Quase preto */
@@ -74,11 +74,13 @@ a {
 header {
     background: linear-gradient(90deg, #000 0%, #031424 100%);
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(0, 170, 255, 0.15);
+    /* Ajuste na transparência da borda para a nova cor */
+    border-bottom: 1px solid rgba(74, 184, 242, 0.15); 
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 170, 255, 0.15);
+    /* Ajuste na cor da sombra para a nova cor */
+    box-shadow: 0 0 10px rgba(74, 184, 242, 0.15); 
     backdrop-filter: blur(6px);
     transition: background 0.4s ease, box-shadow 0.4s ease;
 }
@@ -103,11 +105,13 @@ header {
     border: 2px solid var(--color-primary);
     object-fit: cover;
     transition: 0.3s;
-    box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+    /* Ajuste na cor da sombra para a nova cor */
+    box-shadow: 0 0 10px rgba(74, 184, 242, 0.3);
 }
 
 .foto-logo:hover {
-    box-shadow: 0 0 15px rgba(0, 170, 255, 0.7);
+    /* Ajuste na cor da sombra para a nova cor */
+    box-shadow: 0 0 15px rgba(74, 184, 242, 0.7);
     transform: scale(1.05);
 }
 
@@ -165,7 +169,8 @@ header {
     height: 38px;
     border-radius: 50%;
     transition: all 0.3s;
-    box-shadow: 0 0 10px rgba(0, 170, 255, 0.4);
+    /* Ajuste na cor da sombra para a nova cor */
+    box-shadow: 0 0 10px rgba(74, 184, 242, 0.4);
     font-size: 1.1rem;
 }
 
@@ -190,7 +195,8 @@ header {
 
 #hero h1 {
     color: var(--color-primary-soft);
-    text-shadow: 0 0 15px rgba(0, 170, 255, 0.7);
+    /* Ajuste na cor da sombra para a nova cor */
+    text-shadow: 0 0 15px rgba(74, 184, 242, 0.7);
     font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 0.5rem;
 }
@@ -209,7 +215,8 @@ header {
     display: inline-block;
     transition: all 0.3s;
     font-weight: 700;
-    box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+    /* Ajuste na cor da sombra para a nova cor */
+    box-shadow: 0 0 15px rgba(74, 184, 242, 0.4);
     border: none;
     cursor: pointer;
 }
@@ -218,7 +225,8 @@ header {
     background: var(--color-secondary);
     color: var(--color-text);
     transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(0, 170, 255, 0.8);
+    /* Ajuste na cor da sombra para a nova cor */
+    box-shadow: 0 0 20px rgba(74, 184, 242, 0.8);
 }
 
 /* =======================================================
@@ -242,13 +250,15 @@ header {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 2rem;
+    /* Ajuste na cor da sombra e borda para a nova cor */
     box-shadow: 0 0 0 5px var(--color-primary), 0 0 25px var(--color-primary);
     transition: all 0.4s ease;
 }
 
 .foto-perfil img:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 25px var(--color-primary), 0 0 60px rgba(0, 170, 255, 0.6);
+    /* Ajuste na cor da sombra para a nova cor */
+    box-shadow: 0 0 25px var(--color-primary), 0 0 60px rgba(74, 184, 242, 0.6);
 }
 
 .sobre-texto {
@@ -323,12 +333,14 @@ header {
     border-radius: 8px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(0, 170, 255, 0.15);
+    /* Ajuste na transparência da borda para a nova cor */
+    border: 1px solid rgba(74, 184, 242, 0.15);
 }
 
 .step-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 170, 255, 0.2);
+    /* Ajuste na cor da sombra para a nova cor */
+    box-shadow: 0 10px 20px rgba(74, 184, 242, 0.2);
     border-color: var(--color-primary); 
 }
 
@@ -344,7 +356,8 @@ header {
     margin: 0 auto 20px auto;
     font-size: 24px;
     color: var(--color-dark); /* Ícones escuros sobre o fundo primary */
-    box-shadow: 0 0 15px rgba(0, 170, 255, 0.6);
+    /* Ajuste na cor da sombra para a nova cor */
+    box-shadow: 0 0 15px rgba(74, 184, 242, 0.6);
 }
 
 /* Estilo do Título do Passo */
@@ -395,7 +408,8 @@ header {
     padding: 2rem;
     margin-bottom: 2rem;
     border-radius: 10px;
-    border: 1px solid rgba(0, 170, 255, 0.2);
+    /* Ajuste na transparência da borda para a nova cor */
+    border: 1px solid rgba(74, 184, 242, 0.2);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s;
 }
@@ -433,7 +447,8 @@ header {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 170, 255, 0.2);
+    /* Ajuste na transparência do fundo para a nova cor */
+    background-color: rgba(74, 184, 242, 0.2);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--color-primary);
@@ -448,7 +463,8 @@ header {
     background-color: var(--color-primary);
     color: var(--color-dark);
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 170, 255, 0.8);
+    /* Ajuste na cor da sombra para a nova cor */
+    box-shadow: 0 0 15px rgba(74, 184, 242, 0.8);
 }
 
 .carousel .prev { left: 10px; }
@@ -518,7 +534,8 @@ header {
     background-color: var(--color-off-black);
     padding: 2rem;
     border-radius: 10px;
-    border: 1px solid rgba(0, 170, 255, 0.2);
+    /* Ajuste na transparência da borda para a nova cor */
+    border: 1px solid rgba(74, 184, 242, 0.2);
 }
 
 #contact-form input,
@@ -544,7 +561,8 @@ footer {
     text-align: center;
     padding: 1.5rem 0;
     background-color: var(--color-off-black);
-    border-top: 1px solid rgba(0, 170, 255, 0.2);
+    /* Ajuste na transparência da borda para a nova cor */
+    border-top: 1px solid rgba(74, 184, 242, 0.2);
     font-size: 0.9rem;
     color: #aaa;
 }
