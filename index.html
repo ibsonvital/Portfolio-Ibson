@@ -3,155 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibson Vital | Data Analyst</title>
-    
-    <link rel="icon" href="fundo.jpg" type="image/jpeg"> 
-    
-    <meta property="og:title" content="Ibson Vital | Data Analyst">
-    <meta property="og:description" content="Transformando dados em decisões inteligentes. Análise, Estratégia e Automação de Processos.">
-    <meta property="og:image" content="https://ibsonvital.github.io/Portfolio-Ibson/fundo.jpg">
-    <meta property="og:url" content="https://ibsonvital.github.io/Portfolio-Ibson/">
-    <meta property="og:type" content="website">
-
-    <link rel="stylesheet" href="style.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Ibson Vital | Data Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="container header-content">
-            <div class="logo-container">
-                <img src="ibson.jpg" alt="Foto de Ibson Vital" class="foto-logo"> 
-                <a href="#hero" class="logo">Ibson Vital</a>
-            </div>
+            <a href="#hero" class="logo-container">
+                <img class="foto-logo" src="ibson.jpg" alt="Foto de Perfil">
+                <span class="logo">Ibson Vital</span> 
+            </a>
 
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#estrategia">Estratégia</a></li> <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#contato" class="btn-cta">Contato</a></li>
-                </ul>
-            </nav>
+<nav id="main-nav">
+    <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#estrategia">Estratégia</a></li>
+        <li><a href="#estudo-caso">Estudos de Caso</a></li>
+        <li><a href="#vendas-project">Projetos</a></li>  <li><a href="#habilidades">Habilidades</a></li>
+    </ul>
+</nav>
 
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/ibson-vital/" target="_blank" class="social-btn linkedin">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/ibsonvital" target="_blank" class="social-btn github">
-                    <i class="fab fa-github"></i>
-                </a>
+            <div class="actions-right-side">
+                <div class="social-links-header">
+                    <a href="https://www.linkedin.com/in/ibson-vital/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/ibsonvital" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                
+                <a href="#contato" class="btn-cta">Contato</a>
+                
+                <button class="menu-toggle" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="hero-bg section-padding">
-            <div class="container">
-                <h1>Transformando dados em decisões inteligentes.</h1>
-                <p class="slogan">Análise, Estratégia e Automação de Processos.</p>
-                <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+        <section id="hero" class="section-padding">
+            <div class="container reveal">
+                <div class="hero-text-content">
+                    <h1>Transformando dados em decisões inteligentes.</h1>
+                    <p class="slogan">Análise, Estratégia e Automação de Processos.</p>
+                    <a href="#estudo-caso" class="btn-primary">Ver Projetos</a>
+                </div>
             </div>
         </section>
 
-        <section id="sobre" class="section-padding bg-light">
-            <div class="container sobre-container">
+        <section id="sobre" class="bg-light section-padding">
+            <div class="container sobre-container reveal">
                 <div class="foto-perfil">
-                    <img src="ibson.jpg" alt="Foto de Ibson Vital"> 
+                    <img src="ibson.jpg" alt="Foto de Perfil Ibson Vital">
                 </div>
                 <div class="sobre-texto">
                     <h2>Quem sou eu?</h2>
-                    <p>
-                        Sou <strong>Ibson Vital</strong>, Analista de Dados com experiência em Power BI, Excel, Power Query e Melhoria de Processos. 
-                        Graduando em Ciência da Computação, com foco em criar soluções analíticas 
-                        que otimizem processos e gerem valor estratégico. 
-                        Trabalho atualmente com dados da empresa <strong>RPEOTTA</strong> e possuo certificações 
-                        em Lean Six Sigma (White e Yellow Belt).
-                    </p>
+                    <p>Sou <strong>Ibson Vital</strong>, Analista de Dados com experiência em Power BI, Excel, Power Query e Melhoria de Processos. Graduando em Ciência da Computação, com foco em criar soluções analíticas que otimizam processos e geram valor estratégico. Trabalho atualmente com dados da empresa <strong>RPEOTTA</strong> e possuo certificações em Lean Six Sigma (White e Yellow Belt).</p>
+                </div>
+                <div class="kpi-box">
+                    <div class="kpi-item"><span>+2</span><p>Projetos Concluídos</p></div>
+                    <div class="kpi-item"><span>+X</span><p>Processos Automatizados</p></div>
+                    <div class="kpi-item"><span>+97%</span><p>Redução do Tempo de Relatório</p></div>
                 </div>
             </div>
         </section>
-
-        <section id="estrategia" class="section-padding bg-dark">
-            <div class="container">
-                <h2 class="text-center">Minha Estratégia em Análise de Dados em 3 Passos</h2>
-                <div class="strategy-steps grid-3">
-                    <div class="step-card">
-                        <div class="icon-circle"><i class="fas fa-search"></i></div>
-                        <h3>1. Análise e Descoberta</h3>
+        
+        <section id="estrategia" class="section-padding bg-light">
+            <div class="container text-center reveal">
+                <h2>Minha Estratégia em Análise de Dados em 3 passos</h2>
+                <div class="strategy-steps">
+                    <div class="step-card reveal">
+                        <div class="icon-circle"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Análise e Descoberta</h3>
                         <p>Imersão completa para entender o contexto do negócio, mapear requisitos de dados (KPIs), identificar gargalos e definir as perguntas-chave a serem respondidas pela análise.</p>
                     </div>
-                    <div class="step-card">
-                        <div class="icon-circle"><i class="fas fa-lightbulb"></i></div>
-                        <h3>2. Modelagem e Desenvolvimento</h3>
+                    <div class="step-card reveal">
+                        <div class="icon-circle"><i class="fas fa-database"></i></div>
+                        <h3>Modelagem e Desenvolvimento</h3>
                         <p>Estruturação de dados limpos e modelagem eficiente (Power BI, Power Query), seguido pelo desenvolvimento de dashboards e relatórios claros, interativos e focados na tomada de decisão.</p>
                     </div>
-                    <div class="step-card">
-                        <div class="icon-circle"><i class="fas fa-chart-line"></i></div>
-                        <h3>3. Insights e Otimização</h3>
+                    <div class="step-card reveal">
+                        <div class="icon-circle"><i class="fas fa-bullseye"></i></div>
+                        <h3>Insights e Otimização</h3>
                         <p>Entrega dos resultados, transformando dados brutos em insights acionáveis. Foco na comunicação da história dos dados e no acompanhamento para otimização contínua de processos e resultados.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="projetos" class="section-padding">
-            <div class="container">
-                <h2>Projetos em Destaque</h2>
+
+        <section id="estudo-caso" class="bg-light section-padding">
+            <div class="container reveal">
+                <h2>Estudos de Caso e Projetos em Destaque</h2>
+
+                <div class="project-item featured-case">
+                    <h3>Estudo de Caso: Automação e Otimização de Processos (RPEOTTA) 📝</h3>
+                    <p>Este case detalha a aplicação prática de ferramentas de Business Intelligence e automação para resolver um gargalo crítico em monitoramento de indicadores.</p>
+                    <ul class="project-details">
+                        <li><strong>Problema:</strong> O monitoramento de indicadores era manual, baseado em planilhas, consumindo cerca de **30 minutos** de trabalho por ciclo de análise.</li>
+                        <li><strong>Solução (O que eu fiz):</strong> Implementação de Dashboards Dinâmicos no **Power BI**, substituindo as planilhas. Usei o **Power Query** para automatizar a integração, mescla e tratamento de múltiplas fontes de dados (incluindo a plataforma SIGEM da Petrobras).</li>
+                        <li>✅ **Redução de 97% no Tempo de Análise** (de ~30 minutos para segundos).</li>
+                        <li>✅ Aumento significativo na agilidade, precisão e confiabilidade das informações.</li>
+                        <li>✅ Criação de solução automatizada para monitoramento de prazos e dias úteis, apoiando o plano de ação apresentado à Petrobras.</li>
+                    </ul>
+                </div>
                 
-                <div class="project-item">
-                    <h3>Dashboard de Metas e Vendas</h3>
-                    <p>Dashboard em Power BI para acompanhamento de metas, desempenho de vendas e rentabilidade.</p>
-                    <div class="carousel">
-                        <button class="prev">&#10094;</button>
-                        <div class="carousel-track">
-                            <img src="vendas.png" alt="Dashboard Vendas 1" class="project-img">
-                            <img src="vendasrela.png" alt="Dashboard Vendas 2" class="project-img">
+                <hr style="border-color: rgba(74, 184, 242, 0.1); margin: 50px 0;">
+
+                <div class="dashboard-block featured-case" id="vendas-project">
+                    <h3>Dashboard de Metas e Vendas 📊</h3>
+                    <p>Dashboard em Power BI para acompanhamento de metas, desempenho de vendas e rentabilidade. **Use as setas para navegar entre as duas telas.**</p>
+                    
+                    <div class="local-slider-container" data-slider="vendas">
+                        <button class="nav-btn local-left"><i class="fas fa-chevron-left"></i></button>
+                        <div class="local-slider-track" data-current-slide="0">
+                            <div class="local-slide"><img src="vendas.png" alt="Tela 1 do Dashboard de Vendas em Power BI" class="dashboard-img"></div>
+                            <div class="local-slide"><img src="vendasrela.png" alt="Tela 2 do Dashboard de Vendas em Power BI" class="dashboard-img"></div>
                         </div>
-                        <button class="next">&#10095;</button>
+                        <button class="nav-btn local-right"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
 
-                <div class="project-item">
-                    <h3>Dashboard de Logística</h3>
-                    <p>Visualização interativa para controle de entregas, atrasos, eficiência operacional e análise financeira.</p>
-                    <div class="carousel">
-                        <button class="prev">&#10094;</button>
-                        <div class="carousel-track">
-                            <img src="pedidos.png" alt="Dashboard Logística 1" class="project-img">
-                            <img src="financeiro.png" alt="Dashboard Logística 2" class="project-img">
+                <div class="dashboard-block" id="logistica-project">
+                    <h3>Dashboard de Logística 🚚</h3>
+                    <p>Visualização interativa para controle de entregas, atrasos, eficiência operacional e análise financeira. **Use as setas para navegar entre as duas telas.**</p>
+                    
+                    <div class="local-slider-container" data-slider="logistica">
+                        <button class="nav-btn local-left"><i class="fas fa-chevron-left"></i></button>
+                        <div class="local-slider-track" data-current-slide="0">
+                            <div class="local-slide"><img src="pedidos.png" alt="Tela 1 do Dashboard de Logística" class="dashboard-img"></div>
+                            <div class="local-slide"><img src="financeiro.png" alt="Tela 2 do Dashboard de Logística" class="dashboard-img"></div>
                         </div>
-                        <button class="next">&#10095;</button>
+                        <button class="nav-btn local-right"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="dashboard-block" id="operacional-project">
+                    <h3>Dashboard de Desempenho Operacional ⚙️</h3>
+                    <p>Relatório de KPIs para monitoramento de processos, qualidade e gestão de tempo. **Use as setas para navegar entre as duas telas.**</p>
+                    
+                    <div class="local-slider-container" data-slider="operacional">
+                        <button class="nav-btn local-left"><i class="fas fa-chevron-left"></i></button>
+                        <div class="local-slider-track" data-current-slide="0">
+                            <div class="local-slide"><img src="dashboard-op-1.png" alt="Tela 1 do Dashboard Operacional" class="dashboard-img"></div>
+                            <div class="local-slide"><img src="dashboard-op-2.png" alt="Tela 2 do Dashboard Operacional" class="dashboard-img"></div>
+                        </div>
+                        <button class="nav-btn local-right"><i class="fas fa-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="habilidades" class="section-padding bg-dark">
-            <div class="container">
+        
+        <section id="habilidades" class="bg-dark section-padding">
+            <div class="container text-center reveal">
                 <h2>Habilidades Técnicas</h2>
-                <ul class="skills-list grid-4">
-                    <li>Pensamento Analítico</li>
-                    <li>Power Bi</li>
-                    <li>Power Query</li>
-                    <li>Excel Avançado</li>
-                    <li>Python (básico)</li>
-                    <li>Lean Six Sigma (Yellow Belt)</li>
-                    <li>Automação de Processos</li>
-                    <li>Governança de Dados</li>
-                </ul>
+                <div class="skills-table-container">
+                    <div class="skill-group">
+                        <h3>Habilidades Analíticas</h3>
+                        <ul>
+                            <li>Pensamento Analítico</li>
+                            <li>Automação de Processos</li>
+                            <li>Governança de Dados</li>
+                            <li>Resolução de Problemas</li>
+                            <li>Comunicação de Dados</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group">
+                        <h3>Ferramentas e Certificações</h3>
+                        <ul>
+                            <li>Power BI</li>
+                            <li>Power Query</li>
+                            <li>Excel Avançado</li>
+                            <li>Python (Básico)</li>
+                            <li>Lean Six Sigma (Yellow Belt)</li>
+                            <li>Lean Six Sigma (White Belt)</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="contato" class="section-padding bg-light">
-            <div class="container">
+        <section id="contato" class="section-padding">
+            <div class="container text-center reveal">
                 <h2>Entre em Contato</h2>
-                <form id="contact-form" action="https://formspree.io/f/mjkjvyke" method="POST">
-                    <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
-                    <input type="email" id="email" name="_replyto" placeholder="Seu E-mail" required>
-                    <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" required></textarea>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                    <p id="form-message"></p>
+                <p class="contact-cta">Vamos conversar sobre dados? Me manda uma mensagem se quiser ver meu portfólio completo!</p>
+                
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Seu Nome" required>
+                    <input type="email" name="email" placeholder="Seu E-mail" required>
+                    <textarea name="message" placeholder="Sua Mensagem" rows="5" required></textarea>
+                    <button type="submit" class="btn-submit">Enviar</button>
+                    <p id="form-message" style="margin-top: 15px; color: var(--color-primary-soft);"></p>
                 </form>
             </div>
         </section>
@@ -160,53 +202,14 @@
     <footer>
         <div class="container footer-content">
             <p>&copy; 2025 Ibson Vital. Todos os direitos reservados.</p>
-            
             <div class="footer-links">
-                <a href="mailto:ibson.photos@gmail.com" class="footer-link">
-                    <i class="fas fa-envelope"></i> ibson.photo@gmail.com
-                </a>
-                
-                <a href="https://www.linkedin.com/in/ibson-vital/" target="_blank" class="footer-link social-link">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://github.com/ibsonvital" target="_blank" class="footer-link social-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
+                <a href="mailto:ibson.photos@gmail.com" class="footer-link"><i class="fas fa-envelope"></i>ibson.photos@gmail.com</a>
+                <a href="https://www.linkedin.com/in/ibson-vital/" target="_blank" class="footer-link"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                <a href="https://github.com/ibsonvital" target="_blank" class="footer-link"><i class="fab fa-github"></i>GitHub</a>
             </div>
         </div>
     </footer>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const carousels = document.querySelectorAll(".carousel");
-
-        carousels.forEach(carousel => {
-            const track = carousel.querySelector(".carousel-track");
-            const slides = Array.from(track.children);
-            const prevButton = carousel.querySelector(".prev");
-            const nextButton = carousel.querySelector(".next");
-
-            let currentIndex = 0;
-
-            function updateCarousel() {
-                const slideWidth = slides[0].getBoundingClientRect().width;
-                track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-            }
-
-            nextButton.addEventListener("click", () => {
-                currentIndex = (currentIndex + 1) % slides.length;
-                updateCarousel();
-            });
-
-            prevButton.addEventListener("click", () => {
-                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-                updateCarousel();
-            });
-
-            window.addEventListener("resize", updateCarousel);
-        });
-    });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>

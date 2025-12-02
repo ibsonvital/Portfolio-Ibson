@@ -1,128 +1,114 @@
-// script.js — validação do formulário, menu toggle e reveal ao rolar
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. Lógica do Menu Mobile ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+            menuToggle.setAttribute('aria-expanded', !isExpanded);
+            mainNav.classList.toggle('active');
+        });
 
-document.addEventListener('DOMContentLoaded', function () {
-    // 1) Menu mobile toggle
-    const menuBtn = document.querySelector('.menu-toggle');
-    const nav = document.getElementById('main-nav');
-
-    if (menuBtn && nav) {
-        menuBtn.addEventListener('click', () => {
-            const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
-            menuBtn.setAttribute('aria-expanded', !expanded);
-            // alterna visibilidade do menu (simples)
-            nav.querySelector('ul').style.display = expanded ? 'none' : 'flex';
+        // Fechar o menu ao clicar em um link
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
         });
     }
 
-    // 2) Formulário de contato — validação simples
-    const form = document.getElementById('contact-form');
-    const msgEl = document.getElementById('form-message');
+    // --- 2. Lógica dos Sliders Locais (Dashboards) ---
+    function initializeSlider(projectId) {
+        const projectContainer = document.getElementById(projectId);
+        // Verifica se o container existe antes de tentar inicializar
+        if (!projectContainer) return; 
 
-    if (form) {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const nome = document.getElementById('nome').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const mensagem = document.getElementById('mensagem').value.trim();
+        const track = projectContainer.querySelector('.local-slider-track');
+        // Usa querySelectorAll para garantir que está pegando todos os slides
+        const slides = projectContainer.querySelectorAll('.local-slide'); 
+        const leftBtn = projectContainer.querySelector('.local-left');
+        const rightBtn = projectContainer.querySelector('.local-right');
+        
+        let currentSlide = 0;
+        const totalSlides = slides.length;
 
-            // Validações básicas
-            if (nome.length < 2) {
-                showMessage('Por favor informe seu nome completo.', 'red');
-                return;
-            }
-            if (!validateEmail(email)) {
-                showMessage('Por favor informe um e-mail válido.', 'red');
-                return;
-            }
-            if (mensagem.length < 10) {
-                showMessage('Escreva uma mensagem com pelo menos 10 caracteres.', 'red');
-                return;
-            }
+        function updateSlider() {
+            // Se houver 2 slides, cada um tem 50% de largura
+            const offset = currentSlide * -50; 
+            track.style.transform = `translateX(${offset}%)`;
 
-            // Se tudo ok: simula envio
-            showMessage('Mensagem enviada com sucesso! Obrigado, entrarei em contato.', 'green');
-            form.reset();
-        });
-    }
+            // Habilitar/Desabilitar botões
+            if (leftBtn) leftBtn.disabled = currentSlide === 0;
+            if (rightBtn) rightBtn.disabled = currentSlide === totalSlides - 1;
+        }
 
-    function validateEmail(email) {
-        // regex simples para e-mail
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    function showMessage(text, color) {
-        if (!msgEl) return;
-        msgEl.textContent = text;
-        msgEl.style.color = color;
-        // remove depois de 6s
-        setTimeout(() => {
-            msgEl.textContent = '';
-        }, 6000);
-    }
-
-    // 3) Reveal on scroll (classes .reveal .hidden)
-    const revealItems = document.querySelectorAll('.reveal.hidden');
-    const revealOnScroll = () => {
-        const offset = window.innerHeight * 0.85;
-        revealItems.forEach(el => {
-            const top = el.getBoundingClientRect().top;
-            if (top < offset) {
-                el.classList.remove('hidden');
-                // opcional: animação simples
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                el.style.opacity = 1;
-                el.style.transform = 'translateY(0)';
-            } else {
-                // mantém hidden caso queira replay ao scroll (opcional)
-                el.style.opacity = 0;
-                el.style.transform = 'translateY(12px)';
-            }
-        });
-    };
-
-    // Inicializa estado (seta opacity 0 para itens .hidden)
-    revealItems.forEach(el => {
-        el.style.opacity = 0;
-        el.style.transform = 'translateY(12px)';
-    });
-
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-
-    // 4) Configuração e lógica do Carrossel de Dashboards
-    const setupCarousels = () => {
-        // Seleciona todos os containers de carrossel
-        const carouselContainers = document.querySelectorAll('.dashboard-carousel-container');
-
-        carouselContainers.forEach(container => {
-            const wrapper = container.querySelector('.dashboard-images-wrapper');
-            const images = container.querySelectorAll('.dashboard-img');
-            const leftBtn = container.querySelector('.left-btn');
-            const rightBtn = container.querySelector('.right-btn');
-            
-            if (!wrapper || images.length === 0) return;
-
-            let currentIndex = 0; 
-            const totalImages = images.length;
-
-            const updateCarousel = () => {
-                const offset = -currentIndex * 100;
-                wrapper.style.transform = `translateX(${offset}%)`;
-            };
+        if (leftBtn && rightBtn) {
+            leftBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlider();
+                }
+            });
 
             rightBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % totalImages;
-                updateCarousel();
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    updateSlider();
+                }
             });
 
-            leftBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + totalImages) % totalImages; 
-                updateCarousel();
-            });
-        });
+            // Inicializa o slider na posição correta (primeiro slide)
+            updateSlider();
+        }
+    }
+
+    // Inicializa cada um dos seus projetos de dashboard
+    initializeSlider('vendas-project');
+    initializeSlider('logistica-project');
+    initializeSlider('operacional-project');
+
+
+    // --- 3. Lógica da Animação Reveal on Scroll ---
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const observerOptions = {
+        root: null, 
+        threshold: 0.1, 
     };
 
-    // Chama a função de configuração dos carrosséis
-    setupCarousels();
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove('hidden');
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, observerOptions);
+
+    revealElements.forEach(el => {
+        el.classList.add('hidden'); // Garante que todos comecem ocultos
+        observer.observe(el);
+    });
+
+    // --- 4. Lógica do Formulário (Exemplo) ---
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulação de envio
+            if (formMessage) {
+                formMessage.textContent = 'Mensagem enviada com sucesso! Entrarei em contato em breve.';
+            }
+            contactForm.reset();
+        });
+    }
 
 });
