@@ -117,7 +117,7 @@ h3 {
 }
 
 /* -------------------------------------- */
-/* --- HEADER & NAVEGAÇÃO (CORREÇÃO FINAL) --- */
+/* --- HEADER & NAVEGAÇÃO (COM BRILHO) --- */
 /* -------------------------------------- */
 header {
     background-color: var(--color-dark);
@@ -143,7 +143,30 @@ header {
     text-decoration: none;
     cursor: pointer;
     flex-shrink: 0;
+    /* Adição: Transição para o efeito hover */
+    transition: all 0.4s ease-in-out; 
 }
+
+/* EFEITO DE BRILHO (NEON GLOW) NO LOGO/NOME */
+.logo-container:hover {
+    transform: translateY(-2px); 
+    box-shadow: 0 0 10px rgba(74, 184, 242, 0.5);
+    border-radius: 5px; 
+}
+
+.logo-container:hover .logo {
+    text-shadow: 
+        0 0 5px var(--color-primary), 
+        0 0 10px var(--color-primary-soft), 
+        0 0 20px var(--color-primary-soft);
+    color: var(--color-primary-soft); 
+}
+
+.logo-container:hover .foto-logo {
+    border-color: var(--color-primary-soft); 
+    box-shadow: 0 0 10px var(--color-primary-soft);
+}
+/* FIM DO EFEITO LOGO */
 
 .foto-logo {
     width: 40px;
@@ -179,17 +202,22 @@ header {
     color: var(--color-text-light);
     font-weight: 500;
     padding: 0;
+    /* Ajuste: Transição para o efeito de brilho */
+    transition: color var(--transition-duration), text-shadow 0.3s ease-in-out; 
 }
 
 #main-nav a:hover {
     color: var(--color-primary);
+    /* Adição: Efeito de Brilho no texto do menu */
+    text-shadow: 
+        0 0 3px var(--color-primary), 
+        0 0 8px var(--color-primary-soft);
 }
 
 /* BLOCO DE AÇÕES (COLUNA DA DIREITA) */
 .actions-right-side {
     display: flex;
     align-items: center;
-    /* CHAVE DA CORREÇÃO: Alinha o botão "Contato" à esquerda e os ícones à direita */
     flex-direction: row-reverse; 
     gap: 15px; 
     flex-shrink: 0;
@@ -200,7 +228,6 @@ header {
     display: flex;
     gap: 10px;
     flex-shrink: 0;
-    /* Coloca os ícones à esquerda do botão, mas na ordem normal (LinkedIn, GitHub) */
     flex-direction: row; 
 }
 
@@ -214,13 +241,15 @@ header {
     background-color: var(--color-primary);
     color: var(--color-dark) !important;
     font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.2s;
+    transition: background-color 0.3s ease, transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .social-links-header a:hover {
     background-color: var(--color-primary-soft);
     transform: translateY(-1px);
+    /* Adição: Efeito de brilho nas bolinhas de ícones sociais */
+    box-shadow: 0 0 10px var(--color-primary-soft); 
 }
 
 /* Botão "Contato" no header */
@@ -233,15 +262,17 @@ header {
     font-weight: 700;
     background-image: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-    /* Importante para a ordem reversa funcionar */
+    /* Ajuste: Transição para o novo efeito de sombra e cor */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s, filter 0.3s;
     order: 1; 
 }
 
 .actions-right-side .btn-cta:hover {
     background-color: var(--color-primary-soft);
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Adição: Brilho no botão */
+    box-shadow: 0 0 15px var(--color-primary), 0 4px 8px rgba(0, 0, 0, 0.3); 
+    filter: brightness(1.2); 
 }
 
 .menu-toggle {
@@ -251,7 +282,6 @@ header {
     color: var(--color-primary);
     font-size: 1.5rem;
     cursor: pointer;
-    /* Importante para a ordem reversa funcionar */
     order: 0; 
 }
 
@@ -557,7 +587,28 @@ header {
     font-size: 0.95rem;
     color: var(--color-text-light);
     border-left: 3px solid var(--color-primary-soft);
+    
+    /* ADIÇÃO: Transição suave para os efeitos de hover */
+    transition: all 0.3s ease-in-out;
 }
+
+/* NOVO CÓDIGO: Efeito de Brilho e Deslocamento ao passar o mouse */
+.skill-group li:hover {
+    transform: translateY(-3px); /* Deslocamento mais perceptível */
+    cursor: pointer;
+    background-color: var(--color-secondary); /* Leve mudança de cor de fundo */
+    
+    /* Brilho no item da lista */
+    box-shadow: 
+        0 0 15px rgba(74, 184, 242, 0.5); 
+        
+    /* Realce na borda */
+    border-left: 3px solid var(--color-primary);
+    
+    /* Efeito de brilho sutil no texto */
+    text-shadow: 0 0 5px var(--color-primary-soft);
+}
+/* FIM DO EFEITO HABILIDADES */
 
 
 /* -------------------------------------- */
@@ -635,11 +686,22 @@ footer p {
     color: var(--color-primary-soft); 
     display: flex;
     align-items: center;
+    /* Adição: Transição para o efeito de brilho */
+    transition: all 0.3s ease-in-out;
 }
 
 .footer-link i {
     margin-right: 5px;
     color: var(--color-primary-soft);
+}
+
+/* Adição: Efeito de Brilho no link do rodapé ao passar o mouse */
+.footer-link:hover {
+    color: var(--color-primary);
+    transform: translateY(-2px); 
+    text-shadow: 
+        0 0 5px var(--color-primary-soft), 
+        0 0 10px var(--color-primary);
 }
 
 
