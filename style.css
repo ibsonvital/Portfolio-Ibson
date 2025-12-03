@@ -612,10 +612,12 @@ footer {
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    /* CORREÇÃO APLICADA: Centraliza o conteúdo (copyright e links) */
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 0 15px;
+    gap: 30px;
 }
 
 footer p {
