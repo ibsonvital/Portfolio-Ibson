@@ -810,3 +810,45 @@ footer p {
         align-items: center;
     }
 }
+/* -------------------------------------- */
+/* --- BOTÃO CURRÍCULO (PADRÃO DO SITE) --- */
+/* -------------------------------------- */
+.btn-cv {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    
+    /* Mantém padrão do seu tema */
+    background-color: var(--color-primary);
+    color: var(--color-dark) !important;
+    
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    /* Igual aos outros botões */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 
+        background-color 0.3s, 
+        transform 0.2s, 
+        box-shadow 0.2s, 
+        filter 0.3s;
+}
+
+.btn-cv i {
+    margin-right: 8px;
+}
+
+/* HOVER NO MESMO PADRÃO DO HEADER */
+.btn-cv:hover {
+    background-color: var(--color-primary-soft);
+    transform: translateY(-2px);
+
+    /* 🔥 efeito neon igual seu site */
+    box-shadow: 
+        0 0 15px var(--color-primary), 
+        0 4px 8px rgba(0, 0, 0, 0.3);
+
+    filter: brightness(1.2);
+}

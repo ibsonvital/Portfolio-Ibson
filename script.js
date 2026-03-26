@@ -95,20 +95,34 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // --- 4. Lógica do Formulário (Exemplo) ---
-    const contactForm = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
+   // --- 4. Lógica do Formulário (REAL com Formspree) ---
+const contactForm = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulação de envio
-            if (formMessage) {
-                formMessage.textContent = 'Mensagem enviada com sucesso! Entrarei em contato em breve.';
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const data = new FormData(contactForm);
+
+        try {
+            const response = await fetch("https://formspree.io/f/mykbypzb", {
+                method: "POST",
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                formMessage.textContent = "Mensagem enviada com sucesso!";
+                contactForm.reset();
+            } else {
+                formMessage.textContent = "Erro ao enviar. Tente novamente.";
             }
-            contactForm.reset();
-        });
-    }
 
-});
+        } catch (error) {
+            formMessage.textContent = "Erro de conexão. Tente novamente.";
+        }
+    });
+}
