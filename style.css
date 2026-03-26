@@ -492,6 +492,8 @@ header {
     border-left: 5px solid var(--color-primary);
 }
 
+/* ... código anterior ... */
+
 /* SLIDER */
 .local-slider-container {
     position: relative;
@@ -502,15 +504,16 @@ header {
     border: 1px solid var(--color-primary-soft);
 }
 
+/* --- COLE O NOVO CÓDIGO AQUI --- */
 .local-slider-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 200%; /* Duas slides de 100% */
+    width: 200%; /* Duas slides de 100% da tela visível */
 }
 
 .local-slide {
     flex-shrink: 0;
-    width: 50%;
+    width: 50%; /* Metade da track de 200% = 100% do container */
     box-sizing: border-box;
 }
 
@@ -519,8 +522,14 @@ header {
     height: auto;
     display: block;
     border-radius: 5px;
+    object-fit: contain;
 }
+/* ------------------------------- */
 
+.nav-btn {
+    position: absolute;
+/* ... resto do seu código ... */
+}
 .nav-btn {
     position: absolute;
     top: 50%;
